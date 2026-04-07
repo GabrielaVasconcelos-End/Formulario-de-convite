@@ -1,3 +1,10 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 :root {
   --font-family-logo: 'Leckerli One', cursive;
   --font-family-header: 'Baloo 2', cursive;
@@ -37,4 +44,8 @@
   --color-shape-body:#212427;
   --color-shape-button:#2D3136;
   --color-shape-hover: #383D42;
+}
+
+body {
+  overflow: hidden;
 }
