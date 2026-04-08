@@ -48,4 +48,16 @@
 
 body {
   overflow: hidden;
+  color: var(--text-color-body);
+  background-color: var(--color-shape-background);
+}
+
+img{
+  max-width: 100%;
+}
+
+h1{
+  color:var(--color-accent-pink);
+  font-family: var(--font-family-logo);
+  font-weight: var(--text-logo);
 }
