@@ -69,9 +69,8 @@
               </div>
 
             </fieldset>
-          </form>
+        
 
-          <form>
             <fieldset>
               <legend>
                 <img src="assets/icons/paintbrush-vertical.png" alt="Icone de pincel">
@@ -183,16 +182,60 @@
 
               <Button>Estilo</Button>
 
-              <form>
+            
                   <label for="imagem">Foto de capa</label>
                   <input type="file" id="imagem" name="imagem" accept="image/*">
   
                   <button type="submit">Enviar</button>
-                  </form>
               
             </fieldset>
-          </form>
 
+            <fieldset>
+              <legend>
+                <img src="assets/icons/contact.png" alt="Icone de contato">
+                Dados para contato 
+              </legend>
+
+                <div class="input-wrapper">
+                  <label for="Nome">Nome</label>
+                  <input id="Nome" name="Nome" placeholder="Nome completo">
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="email">Digite seu e-mail:</label>
+                  <input type="email" id="email" name="email" placeholder="exemplo@email.com">
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="telefone">Telefone</label>
+                  <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999">
+                </div>
+              </fieldset>
+
+              <fieldset></fieldset>
+
+            <div>
+              <label>
+              <input type="checkbox" name="termos e condições" value="termos e condições">
+              Li e concordo com os Termos e Condições e com a Política de Privacidade
+            </label>
+
+            <label>
+              <input type="checkbox" name="promoções e-mail" value="promoções e-mail">
+              Aceito receber atualizações e promoções por e-mail
+            </label>
+            
+            <label>
+              <input type="checkbox" name="promoções SMS" value="promoções SMS">
+              Aceito receber atualizações e promoções por SMS
+            </label>
+
+            <Button type="submit">
+              <img src="assets/icons/ticket.png" alt="icone de ticket">
+              Gerar convite</Button>
+            </div>
+          </fieldset>
+        </form>
 
         </div>
 
