@@ -10,15 +10,19 @@
 
 main {
   overflow: auto;
-  padding: 5rem;
+  padding: 80px ;
 }
 
-main.main-container {
-  max-width: 33rem;
-  margin-left: auto;
+main .main-container {
+   max-width: 33rem;
+   margin-left: 0;   
+   margin-right: auto;
 }
 
 aside {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem ;
   background-image: url(../assets/Background.jpg);
   background-size: cover;
   background-position: center;
@@ -26,11 +30,310 @@ aside {
 
   & p{
     color: var(--text-color-heading);
-    font:var(--text-md);
+    font-family: var(--font-family-header);
   }
+  
 }
 
-aside.aside-container {
+aside .aside-container {
   max-width: 31rem;
+  height: 100%;
   
+}
+
+/* ── Form ────────────────────────────── */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+fieldset {
+  border: none;          
+  border-radius: 0; 
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color-placeholder);
+  font-weight: 700;
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+
+/* ── Inputs ──────────────────────────── */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.input-wrapper label {
+  font-size: 0.875rem;
+  color: var(--text-color-placeholder);
+  font-family: var(--font-family-body);
+}
+
+.input-row {
+  display: flex;
+  gap: 1rem;
+}
+
+input[type="datetime-local"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type="datetime-local"]::-webkit-inner-spin-button,
+input[type="datetime-local"]::-webkit-clear-button {
+  display: none;
+}
+
+#date-start,
+#date-end {
+  text-transform: uppercase;
+}
+
+#date-start::placeholder,
+#date-end::placeholder {
+  text-transform: uppercase;
+}
+
+input:not([type]),
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+textarea {
+  background-color: var(--color-input-base);
+  border: 1px solid var(--color-input-stroke);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-color-placeholder);
+  font-family: var(--font-family-body);
+  font-size: 0.875rem;
+  width: 100%;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-input-placeholder);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+/* ── Tipo ─────────────────────── */
+.toggle-group {
+  display: flex;
+  border: 1px solid var(--color-input-stroke);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--color-input-base);
+}
+
+.toggle-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  flex: 1;
+  color: var(--text-color-placeholder);
+  font-size: 0.875rem;
+  font-family: var(--font-family-body);
+}
+
+.toggle-option input[type="radio"] {
+  display: none;
+}
+
+.toggle-option:has(input:checked) {
+  background-color: var(--color-shape-button);
+  color: var(--text-color-body);
+}
+
+.toggle-option img {
+  width: 1rem;
+  height: 1rem;
+}
+/* ── Personalização ─────────────────────────────────────────────────────── */
+.personalizacao {
+  gap: 1.25rem;
+}
+
+.personalizacao-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.personalizacao-grupo > label {
+  font: var(--text-body-sm);
+  color: var(--text-color-heading);
+}
+
+.paleta-cores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cor {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 4px solid var(--color-shape-button);
+  background: var(--cor);
+  cursor: pointer;
+  padding: 0;
+}
+
+.cor-input:checked + .cor {
+  outline: 2px solid var(--color-brand-light);
+  outline-offset: 2px;
+}
+
+.grade-temas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.tema-card {
+  border: 1px solid var(--color-input-stroke);
+  border-radius: 0.5rem;
+  background: var(--color-shape-button);
+  color: var(--text-color-heading);
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+
+.tema-card img {
+  width: 100%;
+  height: 3.8rem;
+  object-fit: cover;
+  border-radius: 0.35rem;
+}
+
+.tema-card span {
+  font: var(--text-body-xs);
+  text-align: center;
+  padding-bottom: 0.2rem;
+}
+
+.tema-input:checked + .tema-card {
+  border-color: var(--color-brand-light);
+  box-shadow: 0 0 0 1px var(--color-brand-light);
+}
+
+.personalizacao-rodape {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 1rem;
+  align-items: end;
+}
+
+.estilo-box,
+.capa-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.estilo-linha {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.toggle-estilo {
+  height: 2.5rem;
+  width: 4rem;
+  border-radius: 9999px;
+  border: 1px solid var(--color-input-stroke);
+  background: var(--color-input-base);
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-estilo::after {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--color-shape-button);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0.25rem;
+  transform: translateY(-50%);
+  transition: left 0.2s ease;
+}
+
+.estilo-input:checked + .toggle-estilo {
+  background: var(--color-brand-dark);
+}
+
+.estilo-input:checked + .toggle-estilo::after {
+  left: 2.1rem;
+}
+
+.upload-linha {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-upload {
+  height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-input-stroke);
+  background: var(--color-shape-button);
+  color: var(--text-color-heading);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font: var(--text-body-sm);
+}
+
+.upload-linha span {
+  color: var(--color-input-placeholder);
+  font: var(--text-body-sm);
+}
+
+.sr-only {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .grade-temas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .personalizacao-rodape {
+    grid-template-columns: 1fr;
+  }
 }

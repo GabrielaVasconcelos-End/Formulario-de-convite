@@ -38,156 +38,149 @@
                 <input id="title" name="title" placeholder="Nome do evento">
               </div>
 
-              <div class="input-wrapper">
-                <label for="date">Início</label>
-                <input type="datetime-local" id="date" name="date" placeholder="Nome do evento">
-
-                <label for="date">Fim</label>
-                <input type="datetime-local" id="date" name="date" placeholder="Nome do evento">
+              <div class="input-row">
+                <div class="input-wrapper">
+                  <label for="date-start">Início</label>
+                  <input type="text" id="date-start" name="date-start" placeholder="DD/MM/AA --:--" inputmode="numeric" maxlength="14" pattern="[0-9]{2}/[0-9]{2}/[0-9]{2} [0-9]{2}:[0-9]{2}" title="Use o formato DD/MM/AA HH:MM">
+                </div>
+                <div class="input-wrapper">
+                  <label for="date-end">Fim</label>
+                  <input type="text" id="date-end" name="date-end" placeholder="DD/MM/AA --:--" inputmode="numeric" maxlength="14" pattern="[0-9]{2}/[0-9]{2}/[0-9]{2} [0-9]{2}:[0-9]{2}" title="Use o formato DD/MM/AA HH:MM">
+                </div>
               </div>
 
-              <div class="select-wrapper">
-                <label for="type">Tipo</label>
-                <select id="type" name="type"> 
-                  <option value="1">Presencial</option>
-                  <option value="2">Online</option>
-                </select>
-              </div>
-
-              <div class="select-wrapper">
-                <label for="link">Cole um link aqui:</label>
-                <input type="url" id="link" name="link" placeholder="https://www.exemplo.com">
+              <div class="input-row">
+                <div class="input-wrapper">
+                  <label>Tipo</label>
+                  <div class="toggle-group">
+                    <label class="toggle-option">
+                      <input type="radio" name="type" value="presencial" checked>
+                      <img src="assets/icons/building-2.png" alt="">
+                      Presencial
+                    </label>
+                    <label class="toggle-option">
+                      <input type="radio" name="type" value="online">
+                      <img src="assets/icons/video.png" alt="">
+                      Online
+                    </label>
+                  </div>
+                </div>
+                <div class="input-wrapper">
+                  <label for="local">Local</label>
+                  <input type="url" id="local" name="local" placeholder="Link ou endereço">
+                </div>
               </div>
 
               <div class="input-wrapper">
                 <label for="description">Descrição</label>
-                <textarea id="description" name="description"  
-                  cols="30"
-                  rows="10"
-                  placeholder="Escreva sobre os detalhes do evento">
-                </textarea>
+                <textarea id="description" name="description" cols="30" rows="10" placeholder="Escreva sobre os detalhes do evento"></textarea>
               </div>
-
             </fieldset>
         
 
-            <fieldset>
+            <fieldset class="personalizacao">
               <legend>
                 <img src="assets/icons/paintbrush-vertical.png" alt="Icone de pincel">
                 Personalização
               </legend>
-                <label for="cor">Cor principal</label>
-               
-              <div class="select-color-wrapper">
-                <select id="cor" name="cor">
-                  <option value="brand-light">brand-light</option>
-                  <option value="Navy">Navy</option>
-                  <option value="Purple">Purple</option>
-                  <option value="Fuschia">Fuschia</option>
-                  <option value="Pink">Pink</option>
-                  <option value="Danger">Danger</option>
-                  <option value="Orange">Orange</option>
-                  <option value="Yellow">Yellow</option>
-                  <option value="Lime">Lime</option>
-                  <option value="Green">Green</option>
-                  <option value="Cyan">Cyan</option>
-                </select>
+              <div class="personalizacao-grupo">
+                <label>Cor principal</label>
+                <div class="paleta-cores">
+                  <input type="radio" id="cor-brand-light" name="cor-principal" class="sr-only cor-input" checked>
+                  <label for="cor-brand-light" class="cor" style="--cor:#59B2FF;" aria-label="Azul claro"></label>
+
+                  <input type="radio" id="cor-navy" name="cor-principal" class="sr-only cor-input">
+                  <label for="cor-navy" class="cor" style="--cor:#6A59FF;" aria-label="Navy"></label>
+
+                  <input type="radio" id="cor-purple" name="cor-principal" class="sr-only cor-input">
+                  <label for="cor-purple" class="cor" style="--cor:#B259FF;" aria-label="Roxo"></label>
+
+                  <input type="radio" id="cor-fuschia" name="cor-principal" class="sr-only cor-input">
+                  <label for="cor-fuschia" class="cor" style="--cor:#FF59F9;" aria-label="Fuschia"></label>
+
+                  <input type="radio" id="cor-pink" name="cor-principal" class="sr-only cor-input">
+                  <label for="cor-pink" class="cor" style="--cor:#FF598B;" aria-label="Rosa"></label>
+
+                  <input type="radio" id="cor-danger" name="cor-principal" class="sr-only cor-input">
+                  <label for="cor-danger" class="cor" style="--cor:#FF5959;" aria-label="Vermelho"></label>
+
+                  <input type="radio" id="cor-orange" name="cor-principal" class="sr-only cor-input">
+                  <label for="cor-orange" class="cor" style="--cor:#FF8B59;" aria-label="Laranja"></label>
+
+                  <input type="radio" id="cor-yellow" name="cor-principal" class="sr-only cor-input">
+                  <label for="cor-yellow" class="cor" style="--cor:#FFCD59;" aria-label="Amarelo"></label>
+
+                  <input type="radio" id="cor-lime" name="cor-principal" class="sr-only cor-input">
+                  <label for="cor-lime" class="cor" style="--cor:#E1FF59;" aria-label="Lima"></label>
+
+                  <input type="radio" id="cor-green" name="cor-principal" class="sr-only cor-input">
+                  <label for="cor-green" class="cor" style="--cor:#59FF91;" aria-label="Verde"></label>
+
+                  <input type="radio" id="cor-cyan" name="cor-principal" class="sr-only cor-input">
+                  <label for="cor-cyan" class="cor" style="--cor:#59FFF9;" aria-label="Ciano"></label>
+                </div>
               </div>
 
-              <section class="grid-temas">
-                <figure id="Temas">
-                  <img src="assets/image/Image.png" alt="Aniversário">
-                  <figcaption>
-                    <h2>Aniversário</h2>
-                  </figcaption>
-                 </figure>
+              <div class="personalizacao-grupo">
+                <label>Tema do evento</label>
+                <section class="grade-temas">
+                  <input type="radio" id="tema-aniversario" name="tema-evento" class="sr-only tema-input" checked>
+                  <label for="tema-aniversario" class="tema-card"><img src="assets/image/Image.png" alt="Aniversário"><span>Aniversário</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (1).png" alt="Infantil">
-                  <figcaption>
-                    <h2>Infantil</h2>
-                  </figcaption>
-                 </figure>
+                  <input type="radio" id="tema-infantil" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-infantil" class="tema-card"><img src="assets/image/Image (1).png" alt="Infantil"><span>Infantil</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (2).png" alt="Formatura">
-                  <figcaption>
-                    <h2>Formatura</h2>
-                  </figcaption>
-                 </figure>
+                  <input type="radio" id="tema-formatura" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-formatura" class="tema-card"><img src="assets/image/Image (2).png" alt="Formatura"><span>Formatura</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (3).png" alt="Casamento">
-                  <figcaption>
-                    <h2>Casamento</h2>
-                  </figcaption>
-                 </figure>
+                  <input type="radio" id="tema-casamento" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-casamento" class="tema-card"><img src="assets/image/Image (3).png" alt="Casamento"><span>Casamento</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (4).png" alt="Chá de bebê">
-                  <figcaption>
-                    <h2>Chá de bebê</h2>
-                  </figcaption>
-                 </figure>
+                  <input type="radio" id="tema-cha-bebe" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-cha-bebe" class="tema-card"><img src="assets/image/Image (4).png" alt="Chá de bebê"><span>Chá de bebê</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (5).png" alt="Chá de panela">
-                  <figcaption>
-                    <h2>Chá de panela</h2>
-                  </figcaption>
-                 </figure>
+                  <input type="radio" id="tema-cha-panela" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-cha-panela" class="tema-card"><img src="assets/image/Image (5).png" alt="Chá de panela"><span>Chá de panela</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (6).png" alt="Carnaval">
-                  <figcaption>
-                    <h2>Carnaval</h2>
-                  </figcaption>
-                 </figure>
+                  <input type="radio" id="tema-carnaval" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-carnaval" class="tema-card"><img src="assets/image/Image (6).png" alt="Carnaval"><span>Carnaval</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (7).png" alt="Páscoa">
-                  <figcaption>
-                    <h2>Páscoa</h2>
-                  </figcaption>
-                 </figure>
+                  <input type="radio" id="tema-pascoa" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-pascoa" class="tema-card"><img src="assets/image/Image (7).png" alt="Páscoa"><span>Páscoa</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (8).png" alt="São João">
-                  <figcaption>
-                    <h2>São João</h2>
-                  </figcaption>
-                 </figure>
+                  <input type="radio" id="tema-sao-joao" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-sao-joao" class="tema-card"><img src="assets/image/Image (8).png" alt="São João"><span>São João</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (9).png" alt="Halloween">
-                  <figcaption>
-                    <h2>Halloween</h2>
-                  </figcaption>
-                 </figure>
+                  <input type="radio" id="tema-halloween" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-halloween" class="tema-card"><img src="assets/image/Image (9).png" alt="Halloween"><span>Halloween</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (10).png" alt="Natal">
-                  <figcaption>
-                    <h2>Natal</h2>
-                  </figcaption>
-                 </figure>
+                  <input type="radio" id="tema-natal" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-natal" class="tema-card"><img src="assets/image/Image (10).png" alt="Natal"><span>Natal</span></label>
 
-                 <figure id="Temas">
-                  <img src="assets/image/Image (11).png" alt="Outros">
-                  <figcaption>
-                    <h2>Outros</h2>
-                  </figcaption>
-                 </figure>
-              </section>
+                  <input type="radio" id="tema-outro" name="tema-evento" class="sr-only tema-input">
+                  <label for="tema-outro" class="tema-card"><img src="assets/image/Image (11).png" alt="Outro"><span>Outro</span></label>
+                </section>
+              </div>
 
-              <Button>Estilo</Button>
+              <div class="personalizacao-rodape">
+                <div class="estilo-box">
+                  <label>Estilo</label>
+                  <div class="estilo-linha">
+                    <input type="checkbox" id="estilo-escuro" name="estilo-escuro" class="sr-only estilo-input" checked>
+                    <label for="estilo-escuro" class="toggle-estilo"></label>
+                    <span>Escuro</span>
+                  </div>
+                </div>
 
-            
+                <div class="capa-box">
                   <label for="imagem">Foto de capa</label>
-                  <input type="file" id="imagem" name="imagem" accept="image/*">
-  
-                  <button type="submit">Enviar</button>
-              
+                  <div class="upload-linha">
+                    <label for="imagem" class="btn-upload">Selecionar</label>
+                    <span>Nenhum arquivo selecionado</span>
+                  </div>
+                  <input type="file" id="imagem" name="imagem" accept="image/*" hidden>
+                </div>
+              </div>
             </fieldset>
 
             <fieldset>
@@ -210,9 +203,7 @@
                   <label for="telefone">Telefone</label>
                   <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999">
                 </div>
-              </fieldset>
-
-              <fieldset></fieldset>
+            </fieldset>
 
             <div>
               <label>
@@ -234,18 +225,11 @@
               <img src="assets/icons/ticket.png" alt="icone de ticket">
               Gerar convite</Button>
             </div>
-          </fieldset>
-        </form>
-
+          </form>
         </div>
-
-
       </main>
-
-      
-
-
     </div>
     
+  
 </body>
 </html>
