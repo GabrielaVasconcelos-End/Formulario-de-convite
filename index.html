@@ -19,12 +19,184 @@
             <h1>Festivite</h1>
             <p>Crie um convite digital para o seu evento</p>
           </header>
+        </div>
       </aside>
 
       <main>
-      <div class="main-container">
-        <h2>Crie seu convite</h2>
-      </div>
+        <div class="main-container">
+          <h2>Crie seu convite</h2>
+
+          <form>
+            <fieldset>
+              <legend>
+                <img src="assets/icons/calendar.png" alt="Icone de calendário">
+                Sobre o evento 
+              </legend>
+
+              <div class="input-wrapper">
+                <label for="title">Titulo</label>
+                <input id="title" name="title" placeholder="Nome do evento">
+              </div>
+
+              <div class="input-wrapper">
+                <label for="date">Início</label>
+                <input type="datetime-local" id="date" name="date" placeholder="Nome do evento">
+
+                <label for="date">Fim</label>
+                <input type="datetime-local" id="date" name="date" placeholder="Nome do evento">
+              </div>
+
+              <div class="select-wrapper">
+                <label for="type">Tipo</label>
+                <select id="type" name="type"> 
+                  <option value="1">Presencial</option>
+                  <option value="2">Online</option>
+                </select>
+              </div>
+
+              <div class="select-wrapper">
+                <label for="link">Cole um link aqui:</label>
+                <input type="url" id="link" name="link" placeholder="https://www.exemplo.com">
+              </div>
+
+              <div class="input-wrapper">
+                <label for="description">Descrição</label>
+                <textarea id="description" name="description"  
+                  cols="30"
+                  rows="10"
+                  placeholder="Escreva sobre os detalhes do evento">
+                </textarea>
+              </div>
+
+            </fieldset>
+          </form>
+
+          <form>
+            <fieldset>
+              <legend>
+                <img src="assets/icons/paintbrush-vertical.png" alt="Icone de pincel">
+                Personalização
+              </legend>
+                <label for="cor">Cor principal</label>
+               
+              <div class="select-color-wrapper">
+                <select id="cor" name="cor">
+                  <option value="brand-light">brand-light</option>
+                  <option value="Navy">Navy</option>
+                  <option value="Purple">Purple</option>
+                  <option value="Fuschia">Fuschia</option>
+                  <option value="Pink">Pink</option>
+                  <option value="Danger">Danger</option>
+                  <option value="Orange">Orange</option>
+                  <option value="Yellow">Yellow</option>
+                  <option value="Lime">Lime</option>
+                  <option value="Green">Green</option>
+                  <option value="Cyan">Cyan</option>
+                </select>
+              </div>
+
+              <section class="grid-temas">
+                <figure id="Temas">
+                  <img src="assets/image/Image.png" alt="Aniversário">
+                  <figcaption>
+                    <h2>Aniversário</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (1).png" alt="Infantil">
+                  <figcaption>
+                    <h2>Infantil</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (2).png" alt="Formatura">
+                  <figcaption>
+                    <h2>Formatura</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (3).png" alt="Casamento">
+                  <figcaption>
+                    <h2>Casamento</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (4).png" alt="Chá de bebê">
+                  <figcaption>
+                    <h2>Chá de bebê</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (5).png" alt="Chá de panela">
+                  <figcaption>
+                    <h2>Chá de panela</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (6).png" alt="Carnaval">
+                  <figcaption>
+                    <h2>Carnaval</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (7).png" alt="Páscoa">
+                  <figcaption>
+                    <h2>Páscoa</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (8).png" alt="São João">
+                  <figcaption>
+                    <h2>São João</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (9).png" alt="Halloween">
+                  <figcaption>
+                    <h2>Halloween</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (10).png" alt="Natal">
+                  <figcaption>
+                    <h2>Natal</h2>
+                  </figcaption>
+                 </figure>
+
+                 <figure id="Temas">
+                  <img src="assets/image/Image (11).png" alt="Outros">
+                  <figcaption>
+                    <h2>Outros</h2>
+                  </figcaption>
+                 </figure>
+              </section>
+
+              <Button>Estilo</Button>
+
+              <form>
+                  <label for="imagem">Foto de capa</label>
+                  <input type="file" id="imagem" name="imagem" accept="image/*">
+  
+                  <button type="submit">Enviar</button>
+                  </form>
+              
+            </fieldset>
+          </form>
+
+
+        </div>
+
+
       </main>
 
       
