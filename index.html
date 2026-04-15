@@ -175,7 +175,9 @@
                 <div class="capa-box">
                   <label for="imagem">Foto de capa</label>
                   <div class="upload-linha">
-                    <label for="imagem" class="btn-upload">Selecionar</label>
+                    <label for="imagem" class="btn-upload">
+                      <img src="assets/icons/upload.png" alt="icone de upload">
+                      Selecionar</label>
                     <span>Nenhum arquivo selecionado</span>
                   </div>
                   <input type="file" id="imagem" name="imagem" accept="image/*" hidden>
@@ -183,7 +185,7 @@
               </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="contato-fieldset">
               <legend>
                 <img src="assets/icons/contact.png" alt="Icone de contato">
                 Dados para contato 
@@ -192,38 +194,52 @@
                 <div class="input-wrapper">
                   <label for="Nome">Nome</label>
                   <input id="Nome" name="Nome" placeholder="Nome completo">
+                  <span class="field-error">
+                    <img src="assets/icons/circle-alert.png" alt="">
+                    Campo obrigatório
+                  </span>
                 </div>
 
-                <div class="input-wrapper">
-                  <label for="email">Digite seu e-mail:</label>
-                  <input type="email" id="email" name="email" placeholder="exemplo@email.com">
-                </div>
+                <div class="input-row contato-row">
+                  <div class="input-wrapper">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@email.com">
+                  </div>
 
-                <div class="input-wrapper">
-                  <label for="telefone">Telefone</label>
-                  <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999">
+                  <div class="input-wrapper">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999">
+                  </div>
                 </div>
             </fieldset>
 
-            <div>
-              <label>
-              <input type="checkbox" name="termos e condições" value="termos e condições">
-              Li e concordo com os Termos e Condições e com a Política de Privacidade
-            </label>
+            <div class="termos-wrapper">
+              <hr class="termos-divider">
 
-            <label>
-              <input type="checkbox" name="promoções e-mail" value="promoções e-mail">
-              Aceito receber atualizações e promoções por e-mail
-            </label>
+              <label class="termo-item">
+                <input type="checkbox" id="termos" name="termos" class="sr-only termo-check" checked>
+                <span class="check-ui" aria-hidden="true"></span>
+                <span class="termo-text">Li e concordo com os <a href="#">Termos e Condições</a> e com a <a href="#">Política de Privacidade</a></span>
+              </label>
+
+              <label class="termo-item">
+                <input type="checkbox" id="promo-email" name="promo-email" class="sr-only termo-check">
+                <span class="check-ui" aria-hidden="true"></span>
+                <span class="termo-text">Aceito receber atualizações e promoções por e-mail</span>
+              </label>
             
-            <label>
-              <input type="checkbox" name="promoções SMS" value="promoções SMS">
-              Aceito receber atualizações e promoções por SMS
-            </label>
+              <label class="termo-item">
+                <input type="checkbox" id="promo-sms" name="promo-sms" class="sr-only termo-check">
+                <span class="check-ui" aria-hidden="true"></span>
+                <span class="termo-text">Aceito receber atualizações e promoções por SMS</span>
+              </label>
 
-            <Button type="submit">
-              <img src="assets/icons/ticket.png" alt="icone de ticket">
-              Gerar convite</Button>
+              <div class="submit-wrap">
+                <button type="submit" class="btn-submit">
+                  <img src="assets/icons/ticket.png" alt="">
+                  Gerar convite
+                </button>
+              </div>
             </div>
           </form>
         </div>
