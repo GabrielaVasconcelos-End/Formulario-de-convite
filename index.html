@@ -27,7 +27,7 @@
           <h2>Crie seu convite</h2>
 
           <form>
-            <fieldset>
+            <fieldset class="sobre-evento">
               <legend>
                 <img src="assets/icons/calendar.png" alt="Icone de calendário">
                 Sobre o evento 
@@ -166,9 +166,9 @@
                 <div class="estilo-box">
                   <label>Estilo</label>
                   <div class="estilo-linha">
-                    <input type="checkbox" id="estilo-escuro" name="estilo-escuro" class="sr-only estilo-input" checked>
+                    <input type="checkbox" id="estilo-escuro" name="estilo-escuro" class="sr-only estilo-input">
                     <label for="estilo-escuro" class="toggle-estilo"></label>
-                    <span>Escuro</span>
+                    <span class="estilo-text"></span>
                   </div>
                 </div>
 
@@ -178,9 +178,13 @@
                     <label for="imagem" class="btn-upload">
                       <img src="assets/icons/upload.png" alt="icone de upload">
                       Selecionar</label>
-                    <span>Nenhum arquivo selecionado</span>
+                    <span class="file-status">Nenhum arquivo selecionado</span>
                   </div>
-                  <input type="file" id="imagem" name="imagem" accept="image/*" hidden>
+                  <span class="file-error">
+                    <img src="assets/icons/circle-alert.png" alt="">
+                    Error message
+                  </span>
+                  <input type="file" id="imagem" name="imagem" accept="image/*" required hidden>
                 </div>
               </div>
             </fieldset>
@@ -193,7 +197,7 @@
 
                 <div class="input-wrapper">
                   <label for="Nome">Nome</label>
-                  <input id="Nome" name="Nome" placeholder="Nome completo">
+                  <input type="text" id="Nome" name="Nome" placeholder="Nome completo" required>
                   <span class="field-error">
                     <img src="assets/icons/circle-alert.png" alt="">
                     Campo obrigatório
@@ -247,5 +251,64 @@
     </div>
     
   
+  <script>
+    (function () {
+      var fileInput = document.getElementById("imagem");
+      var uploadLine = document.querySelector(".upload-linha");
+      var statusText = document.querySelector(".file-status");
+      var fileBox = document.querySelector(".capa-box");
+      var form = document.querySelector("form");
+      var nameInput = document.getElementById("Nome");
+      var nameWrapper = nameInput ? nameInput.closest(".input-wrapper") : null;
+
+      if (!fileInput || !uploadLine || !statusText || !fileBox || !form || !nameInput || !nameWrapper) {
+        return;
+      }
+
+      function validateName() {
+        var isValid = nameInput.value.trim().length > 0;
+        nameWrapper.classList.toggle("is-error", !isValid);
+        return isValid;
+      }
+
+      function setDefaultState() {
+        uploadLine.classList.remove("is-filled");
+        fileBox.classList.remove("error");
+        statusText.textContent = "Nenhum arquivo selecionado";
+      }
+
+      nameInput.addEventListener("blur", validateName);
+
+      nameInput.addEventListener("input", function () {
+        if (nameWrapper.classList.contains("is-error")) {
+          validateName();
+        }
+      });
+
+      fileInput.addEventListener("change", function () {
+        if (fileInput.files && fileInput.files.length > 0) {
+          uploadLine.classList.add("is-filled");
+          fileBox.classList.remove("error");
+          statusText.textContent = fileInput.files[0].name;
+        } else {
+          setDefaultState();
+        }
+      });
+
+      form.addEventListener("submit", function (event) {
+        var isNameValid = validateName();
+        var isFileValid = fileInput.files && fileInput.files.length > 0;
+
+        if (!fileInput.files || fileInput.files.length === 0) {
+          fileBox.classList.add("error");
+          statusText.textContent = "Nenhum arquivo selecionado";
+        }
+
+        if (!isNameValid || !isFileValid) {
+          event.preventDefault();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
